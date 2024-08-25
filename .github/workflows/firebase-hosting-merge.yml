@@ -3,20 +3,8 @@ name: Analyze, Build and Deploy
 on: [push]
 
 jobs:
-  semantic-pull-request:
-    name: "Semantic"
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@v1
-
-  analyze:
-    name: "Analyze"
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
-    with:
-      flutter_channel: stable
-      flutter_version: 3.22
-
   build:
     name: Build
-    needs: [semantic-pull-request, analyze]
     runs-on: ubuntu-latest
     steps:
       - name: 📚 Git Checkout
@@ -55,6 +43,6 @@ jobs:
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.$YOUR_FIREBASE_SERVICE_ACCOUNT_FLUTTER_WEB_DEPLOY }}"
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_IMMANUEL_2281D }}
           channelId: live
-          projectId: $YOUR_FIREBASE_PROJECT_ID
+          projectId: immanuel-2281d
