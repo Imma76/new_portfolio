@@ -56,14 +56,14 @@ class _DesktopViewState extends State<DesktopView> {
     });
 
     try {
-      print("here400 ${{
-        'name': nameController.text,
-        'sender': emailController.text,
-        'receiver': emailController.text,
-        'message': messageController.text,
-      }}");
+      // print("here400 ${{
+      //   'name': nameController.text,
+      //   'sender': emailController.text,
+      //   'receiver': emailController.text,
+      //   'message': messageController.text,
+      // }}");
       Uri uri = Uri.parse('https://email-service-fsmn.onrender.com/mail');
-      print(uri);
+      // print(uri);
       var request = await http.post(
         uri,
         body: {
@@ -74,12 +74,13 @@ class _DesktopViewState extends State<DesktopView> {
               'from ${emailController.text} ${messageController.text.trim()}',
         },
       );
-      print(request.body);
+      // print(request.body);
       if (request.statusCode == 200) {
         nameController.clear();
         emailController.clear();
         subjectController.clear();
         messageController.clear();
+        if (!mounted) return;
         showDialog(
             context: context,
             builder: (builder) => AlertDialog(
@@ -98,6 +99,7 @@ class _DesktopViewState extends State<DesktopView> {
         emailController.clear();
         subjectController.clear();
         messageController.clear();
+        if (!mounted) return;
         showDialog(
             context: context,
             builder: (builder) => AlertDialog(
@@ -113,7 +115,7 @@ class _DesktopViewState extends State<DesktopView> {
                 ));
       }
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
     }
     setState(() {
       load = false;
