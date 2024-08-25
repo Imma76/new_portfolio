@@ -1022,7 +1022,7 @@ class ProjectTileMobile extends StatelessWidget {
                     letterSpacing: 0,
                     color: Colors.white,
                     fontSize: 18)),
-            const Gap(20),
+            const Gap(30),
             Text(description,
 
                 // 'A news app that provides you with the latest news from multiple sources. It also allows you to search for news articles from about 64 countries based on your selection',
