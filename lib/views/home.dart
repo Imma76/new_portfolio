@@ -13,11 +13,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout(
-      mobile: const MobileView(),
-      tablet: Container(color: Colors.yellow),
-      desktop: const DesktopView(),
-      watch: Container(color: Colors.purple),
+    return ScreenTypeLayout.builder(
+      mobile: (context) => const MobileView(),
+      tablet: (context) => Container(color: Colors.yellow),
+      desktop: (context) => const DesktopView(),
+      watch: (context) => Container(color: Colors.purple),
     );
   }
 }

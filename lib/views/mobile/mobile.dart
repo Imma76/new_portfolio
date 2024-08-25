@@ -79,6 +79,7 @@ class _DesktopViewState extends State<MobileView> {
         emailController.clear();
         subjectController.clear();
         messageController.clear();
+        if (!mounted) return;
         showDialog(
             context: context,
             builder: (builder) => AlertDialog(

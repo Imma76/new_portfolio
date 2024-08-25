@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_web_libraries_in_flutter
+
 import 'dart:js' as js;
 
 import 'package:cached_network_image/cached_network_image.dart';
