@@ -13,11 +13,10 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: "stable"
-          flutter-version: 3.22
+          flutter-version: 3.3.8
       - name: 📦 Install Dependencies
         run: |
           flutter pub global activate very_good_cli
-          very_good --analytics false
           very_good packages get --recursive
       - name: 🛠️ Build the application
         run: flutter build web
