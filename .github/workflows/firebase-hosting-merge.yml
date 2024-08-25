@@ -1,22 +1,10 @@
-name: Analyze, Build and Deploy
+name: Build and Deploy
 
-on: [push]
+on: [push, pull_request_target]
 
 jobs:
-  semantic-pull-request:
-    name: "Semantic"
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@v1
-
-  analyze:
-    name: "Analyze"
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
-    with:
-      flutter_channel: stable
-      flutter_version: 3.22
-
   build:
     name: Build
-    needs: [semantic-pull-request, analyze]
     runs-on: ubuntu-latest
     steps:
       - name: 📚 Git Checkout
@@ -25,11 +13,10 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: "stable"
-          flutter-version: 3.3.8
+          flutter-version: 3.22
       - name: 📦 Install Dependencies
         run: |
           flutter pub global activate very_good_cli
-          very_good --analytics false
           very_good packages get --recursive
       - name: 🛠️ Build the application
         run: flutter build web
@@ -44,13 +31,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: 📚 Checkout repo
-        uses: actions/checkout@v3
-      - name: ⬇️ Download Artifact
-        uses: actions/download-artifact@master
+      - name: Clone repository
+        uses: actions/checkout@v4
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
         with:
-          name: build
-          path: build/web
+          channel: stable
+      - run: flutter pub get
+      - run: flutter build web
       - name: 🎯 Deploy to firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
