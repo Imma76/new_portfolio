@@ -1014,15 +1014,16 @@ class ProjectTileMobile extends StatelessWidget {
           children: [
             Text(title,
                 style: GoogleFonts.manrope(
-                    height: 0,
+                    height: 1,
                     letterSpacing: 0,
                     color: Colors.white,
                     fontSize: 18)),
+            const Gap(20),
             Text(description,
 
                 // 'A news app that provides you with the latest news from multiple sources. It also allows you to search for news articles from about 64 countries based on your selection',
                 style: GoogleFonts.manrope(
-                    height: 0,
+                    height: 1,
                     letterSpacing: 0,
                     color: const Color(0xFFC7C7C7),
                     fontSize: 16)),

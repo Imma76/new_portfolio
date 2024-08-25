@@ -163,7 +163,7 @@ class _DesktopViewState extends State<MobileView> {
                   const Gap(100),
                   Text('HI, I AM \nEmmanuel Ugwueze.',
                       style: GoogleFonts.bebasNeue(
-                          height: 0,
+                          height: 1,
                           letterSpacing: 0,
                           color: const Color(0xFFC7C7C7),
                           fontSize: 43)),
@@ -488,7 +488,7 @@ class _DesktopViewState extends State<MobileView> {
                   Text(
                       'I am a software engineer  with over 4 years of experience in building high-quality mobile applications. Proficient in Flutter and Dart, with expertise in creating scalable cross-platform apps for both Android and iOS. Skilled in backend development using Node.js, with a strong focus on delivering innovative solutions that drive business growth. Adept at collaborating with teams and staying up-to-date with the latest technologies. Seeking to contribute to a dynamic team in a challenging and rewarding environment.',
                       style: GoogleFonts.manrope(
-                          height: 0,
+                          height: 1,
                           letterSpacing: 0,
                           fontWeight: FontWeight.w500,
                           color: const Color(0xFFC7C7C7),
@@ -516,7 +516,7 @@ class _DesktopViewState extends State<MobileView> {
                               "https://docs.google.com/document/d/1NmAZupuhCGUM71l1gNeienj7-pZ6OD9z/edit?usp=sharing&ouid=116244184198050482299&rtpof=true&sd=true");
                         },
                         child: Container(
-                          width: 130,
+                          width: 170,
                           height: 34,
                           decoration: ShapeDecoration(
                             color: const Color(0xFFD3E97A),
@@ -586,19 +586,19 @@ class _DesktopViewState extends State<MobileView> {
                 children: [
                   Text('LET\'S CONNECT',
                       style: GoogleFonts.bebasNeue(
-                          height: 0,
+                          height: 1,
                           letterSpacing: 0,
                           color: Colors.white,
                           fontSize: 43)),
                   Text('Say hello at emmanuelchika40@gmail.com',
                       style: GoogleFonts.manrope(
-                          height: 0,
+                          height: 1,
                           letterSpacing: 0,
                           color: const Color(0xFFC7C7C7),
                           fontSize: 16)),
                   Text('For more info here is my resume',
                       style: GoogleFonts.manrope(
-                          height: 0,
+                          height: 1,
                           letterSpacing: 0,
                           color: const Color(0xFFC7C7C7),
                           fontSize: 16)),
